@@ -1,0 +1,29 @@
+[
+    {
+      "id": "promo01",
+      "tipo": "promocao", 
+      "titulo": "⚡ LIQUIDAÇÃO PROGRESSIVA! ⚡",
+      "texto": "Leve 2 peças com 15% OFF, 3 peças com 20% OFF! Só esta semana. Use o cupom PROGRESSIVO.",
+      "imagem": "imagens/liquidacao.png",
+      "link_instagram": null, 
+      "ativo": true
+    },
+    {
+      "id": "anuncio01",
+      "tipo": "anuncio", 
+      "titulo": "✨ Lançamento Coleção Outono/Inverno ✨",
+      "texto": "Novidades incríveis acabaram de chegar! Peças exclusivas com design moderno e toque tecnológico.",
+      "imagem": "imagens/outonoinverno.png", 
+      "link_instagram": "https://www.instagram.com/p/Cxxxxxxxxx/",
+      "ativo": true
+    },
+     {
+      "id": "anuncio02",
+      "tipo": "anuncio", 
+      "titulo": "Siga @TammysStore_ no Instagram!",
+      "texto": "Acompanhe nossas dicas de moda, bastidores e promoções exclusivas para seguidores.",
+      "imagem": "imagens/insta.png",
+      "link_instagram": "https://www.instagram.com/tammysstore_/",
+      "ativo": true
+    }
+  ]

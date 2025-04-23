@@ -1,0 +1,26 @@
+[
+  {
+    "id": "sku001",
+    "nome": "Camiseta Algodão Orgânico",
+    "descricao": "Confortável e sustentável, perfeita para o dia a dia.",
+    "preco": 89.90,
+    "imagem": "imagens/vestido.jpg",
+    "categoria": "Vestidos"
+  },
+  {
+    "id": "sku002",
+    "nome": "Calça Jeans Reta",
+    "descricao": "Corte clássico que nunca sai de moda. Lavagem média.",
+    "preco": 159.50,
+    "imagem": "imagens/calca.jpg",
+    "categoria": "Calças"
+  },
+  {
+    "id": "sku003",
+    "nome": "Jaqueta Corta-Vento",
+    "descricao": "Leve e prática, ideal para meia estação. Repelente à água.",
+    "preco": 199.00,
+    "imagem": "imagens/jaqueta.jpg",
+    "categoria": "Jaquetas"
+  }
+]
