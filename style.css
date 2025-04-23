@@ -23,143 +23,149 @@ a:hover { color: #fff; }
 /* --- Estilos do Header, Main, Footer, Anúncios --- */
 header { /* ... estilos header ... */ background-color: var(--cor-fundo-header-footer); color: #fff; padding: 0.8rem 1.5rem; box-shadow: 0 2px 5px rgba(0,0,0,0.4); position: sticky; top: 0; z-index: 900; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
 #header-logo { /* ... estilos logo header ... */ height: 45px; width: 45px; border-radius: 50%; border: 2px solid var(--cor-dourado); object-fit: cover; display: block; opacity: 0; transform: scale(0.5); animation: subtleShine 5s ease-in-out infinite 1s; }
-.header-text { text-align: center; flex-grow: 1; }
-header h1 { margin: 0; font-size: 1.5em; color: #fff; font-weight: 700; line-height: 1.2; }
-header p { margin: 0; font-size: 0.85em; color: var(--cor-texto-secundario); }
+.header-text { text-align: center; flex-grow: 1; } header h1 { margin: 0; font-size: 1.5em; color: #fff; font-weight: 700; line-height: 1.2; } header p { margin: 0; font-size: 0.85em; color: var(--cor-texto-secundario); }
 
-/* Seção de Promoções (NOVA) */
+/* Seção de Promoções Carrossel (SwiperJS) */
 #promo-section {
-    padding: 0; /* Sem padding para imagem/banner ocupar tudo */
-    background-color: var(--cor-fundo-card); /* Cor de fundo caso imagem falhe */
+    padding: 0; /* Sem padding na seção principal */
+    background-color: var(--cor-fundo-card);
     opacity: 0; visibility: hidden;
-    transition: opacity 0.8s ease-in, visibility 0.8s ease-in; /* Delay ajustado via JS */
-    overflow: hidden; /* Garante que conteúdo não vaze */
-    position: relative; /* Para textos sobrepostos se necessário */
+    transition: opacity 0.8s ease-in, visibility 0.8s ease-in; /* Delay via JS */
+    overflow: hidden;
+    position: relative; /* Para controles absolutos */
 }
 #promo-section.visible { opacity: 1; visibility: visible; }
 
-/* Estilo para o item de promoção (assumindo um por vez) */
-.promo-item {
-    display: block; /* Link ocupa toda a área */
-    position: relative; /* Para posicionar texto sobreposto */
-    text-decoration: none;
-    color: inherit; /* Herda cor do texto */
-    background-color: var(--cor-fundo-escuro); /* Fundo escuro */
-}
-.promo-item img {
+/* Container principal do Swiper */
+.promo-swiper {
     width: 100%;
-    height: auto; /* Altura automática */
-    max-height: 400px; /* Limite de altura */
-    object-fit: cover; /* Cobre a área */
+    /* Defina uma altura ou aspect-ratio para banners */
+    /* Exemplo com aspect-ratio (ajuste conforme suas imagens): */
+     aspect-ratio: 16 / 6; /* Proporção de banner largo */
+    /* Ou altura fixa: height: 400px; */
+    max-height: 450px; /* Limite máximo de altura */
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: var(--cor-fundo-escuro);
+    /* Center slide content vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Esconde partes da imagem que vazam no zoom */
+}
+
+.swiper-slide img {
     display: block;
-    opacity: 0.8; /* Leve transparência para texto sobressair */
-    transition: opacity 0.4s ease, transform 0.4s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cobre todo o slide */
+     transition: transform 0.5s ease, opacity 0.5s ease; /* Transição para hover */
+     opacity: 0.8; /* Levemente escurecida */
 }
-.promo-item:hover img {
-    opacity: 0.6; /* Mais transparente no hover */
-    transform: scale(1.03); /* Leve zoom */
+
+/* Adapta o .promo-item para ser o conteúdo do slide */
+.promo-item-slide {
+    position: relative; /* Para conteúdo sobreposto */
+    width: 100%;
+    height: 100%;
+    display: block; /* Para links */
+    color: inherit;
 }
-.promo-content { /* Para colocar texto sobre a imagem */
+.promo-item-slide:hover img {
+     transform: scale(1.05); /* Zoom na imagem */
+     opacity: 0.6;
+}
+
+.promo-content { /* Conteúdo sobre a imagem */
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     padding: 30px 40px;
     box-sizing: border-box;
-    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%); /* Gradiente para legibilidade */
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 100%);
     color: #fff;
     text-align: left;
+    transition: background 0.4s ease; /* Suaviza entrada/saída do gradiente */
 }
-.promo-content h3 {
-    margin: 0 0 10px 0;
-    font-size: clamp(1.5em, 3vw, 2.2em); /* Tamanho responsivo */
-    color: #fff; /* Branco para destaque */
-    font-weight: 700;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+.promo-item-slide:hover .promo-content {
+    /* Pode intensificar o gradiente no hover se quiser */
+    /* background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0) 100%); */
 }
-.promo-content p {
-    margin: 0;
-    font-size: clamp(1em, 2vw, 1.2em);
-    color: var(--cor-texto-principal);
-    max-width: 70%; /* Limita largura do texto */
-    line-height: 1.5;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+
+.promo-content h3 { margin: 0 0 10px 0; font-size: clamp(1.5em, 3vw, 2.2em); color: #fff; font-weight: 700; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); }
+.promo-content p { margin: 0; font-size: clamp(1em, 2vw, 1.2em); color: var(--cor-texto-principal); max-width: 70%; line-height: 1.5; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); }
+@media (max-width: 600px) { .promo-content { text-align: center; max-width: 95%; padding: 20px; } .promo-content p { max-width: 100%; } }
+
+/* Estilização dos Controles do Swiper (Preto/Dourado) */
+.swiper-button-prev,
+.swiper-button-next {
+    color: var(--cor-dourado) !important; /* Usa !important para sobrescrever Swiper */
+    background-color: rgba(0, 0, 0, 0.3); /* Fundo semi-transparente */
+    border-radius: 50%;
+    width: 40px !important; /* Tamanho do botão */
+    height: 40px !important;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
-/* Media query para centralizar texto em telas menores */
-@media (max-width: 600px) {
-    .promo-content { text-align: center; max-width: 95%; padding: 20px; }
-    .promo-content p { max-width: 100%; }
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff !important;
+}
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    font-size: 18px !important; /* Tamanho do ícone da seta */
+    font-weight: bold !important;
+}
+
+.swiper-pagination-bullet {
+    background-color: rgba(255, 255, 255, 0.5) !important; /* Cor bolinha inativa */
+    opacity: 1 !important;
+    width: 10px !important;
+    height: 10px !important;
+    transition: background-color 0.3s ease;
+}
+.swiper-pagination-bullet-active {
+    background-color: var(--cor-dourado) !important; /* Cor bolinha ativa */
 }
 
 
-main { padding: 30px 20px; max-width: 1200px; margin: 0 auto; }
-main h2 { /* Título "Nossos Produtos" */ text-align: center; color: #fff; margin: 40px 0; font-size: 2.4em; font-weight: 700; letter-spacing: 1px; }
+main { /* ... estilos main ... */ padding: 30px 20px; max-width: 1200px; margin: 0 auto; }
+main h2 { /* ... titulo produtos ... */ text-align: center; color: #fff; margin: 40px 0; font-size: 2.4em; font-weight: 700; letter-spacing: 1px; }
 
-/* Seção de Anúncios Gerais (NOVA POSIÇÃO - FIM) */
-#store-announcements {
-    padding: 40px 20px;
-    margin-top: 40px; /* Espaço acima */
-    background-color: var(--cor-fundo-header-footer); /* Fundo sutilmente diferente */
-    border-top: 1px solid var(--cor-borda-sutil);
-    opacity: 0; visibility: hidden;
-    transition: opacity 0.8s ease-in, visibility 0.8s ease-in; /* Delay ajustado via JS */
-}
+#store-announcements { /* ... estilos anuncios gerais ... */ padding: 40px 20px; margin-top: 40px; background-color: var(--cor-fundo-header-footer); border-top: 1px solid var(--cor-borda-sutil); opacity: 0; visibility: hidden; transition: opacity 0.8s ease-in, visibility 0.8s ease-in; }
 #store-announcements.visible { opacity: 1; visibility: visible; }
-#store-announcements h2 { /* Título opcional "Fique por Dentro" */
-    text-align: center;
-    color: var(--cor-texto-secundario);
-    margin-top: 0;
-    margin-bottom: 30px;
-    font-size: 1.8em;
-    font-weight: 600;
-}
-/* Layout para múltiplos anúncios no final */
-.announcements-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-.announcement-item { /* Estilo reutilizado, mas talvez com ajustes para o final */
-    display: flex; flex-direction: column; /* Empilha imagem e texto */
-    align-items: flex-start; /* Alinha à esquerda */
-    gap: 15px;
-    padding: 20px;
-    border: 1px solid var(--cor-borda-sutil);
-    border-radius: 8px;
-    background-color: var(--cor-fundo-card);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-.announcement-image { flex: none; width: 100%; /* Imagem ocupa largura */ max-width: 100%; } /* Remove largura fixa */
+#store-announcements h2 { text-align: center; color: var(--cor-texto-secundario); margin-top: 0; margin-bottom: 30px; font-size: 1.8em; font-weight: 600; }
+.announcements-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto; }
+.announcement-item { /* ... estilos item anuncio ... */ display: flex; flex-direction: column; align-items: flex-start; gap: 15px; padding: 20px; border: 1px solid var(--cor-borda-sutil); border-radius: 8px; background-color: var(--cor-fundo-card); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+.announcement-image { flex: none; width: 100%; max-width: 100%; }
 .announcement-image img { width: 100%; height: 200px; object-fit: cover; border-radius: 5px; display: block; }
-.announcement-content { flex: 1 1 auto; width: 100%; } /* Ocupa largura restante */
-.announcement-content h3 { font-size: 1.3em; color: var(--cor-dourado); }
-.announcement-content p { font-size: 0.95em; margin-bottom: 15px; }
-.announcement-content a { /* ...estilo link anúncio... */ }
+.announcement-content { flex: 1 1 auto; width: 100%; } .announcement-content h3 { font-size: 1.3em; color: var(--cor-dourado); } .announcement-content p { font-size: 0.95em; margin-bottom: 15px; }
+.announcement-content a { display: inline-block; padding: 8px 18px; background-color: var(--cor-dourado); color: var(--cor-fundo-escuro); border-radius: 4px; font-weight: 600; font-size: 0.9em; transition: background-color 0.3s ease, transform 0.2s ease; }
+.announcement-content a:hover { background-color: var(--cor-dourado-hover); color: var(--cor-fundo-escuro); transform: scale(1.03); }
 
-
-footer { /* ... estilos footer ... */ text-align: center; margin-top: 0; /* Margem agora vem do #store-announcements */ padding: 25px 20px; background-color: var(--cor-fundo-header-footer); color: #aaa; font-size: 0.9em; border-top: 1px solid var(--cor-borda-sutil); }
+footer { /* ... estilos footer ... */ text-align: center; margin-top: 0; padding: 25px 20px; background-color: var(--cor-fundo-header-footer); color: #aaa; font-size: 0.9em; border-top: 1px solid var(--cor-borda-sutil); }
 
 /* Ajuste inicial e Classe para fade-in */
 header, #promo-section, #store-announcements, main, footer, .botao-carrinho-flutuante { opacity: 0; visibility: hidden; transition: opacity 0.8s ease-in, visibility 0.8s ease-in; }
 header.visible, #promo-section.visible, #store-announcements.visible, main.visible, footer.visible, .botao-carrinho-flutuante.visible { opacity: 1; visibility: visible; }
-
 /* Delays do fade-in (Nova Ordem) */
-header.visible { transition-delay: 0s; }           /* Header primeiro */
-#promo-section.visible { transition-delay: 0.1s; } /* Promo logo depois */
-main.visible { transition-delay: 0.3s; }           /* Produtos */
-#store-announcements.visible { transition-delay: 0.5s; } /* Anúncios no fim */
-footer.visible { transition-delay: 0.7s; }         /* Rodapé */
-.botao-carrinho-flutuante.visible { transition-delay: 0.8s; } /* Botão por último */
-
+header.visible { transition-delay: 0s; }
+#promo-section.visible { transition-delay: 0.1s; }
+main.visible { transition-delay: 0.3s; }
+#store-announcements.visible { transition-delay: 0.5s; }
+footer.visible { transition-delay: 0.7s; }
+.botao-carrinho-flutuante.visible { transition-delay: 0.8s; }
 
 /* --- Skeleton Loader Styles --- */
 @keyframes skeletonShimmer { /* ... skeleton shimmer ... */ 0%{background-position:-1000px 0} 100%{background-position:1000px 0} }
 .skeleton-wrapper { /* ... skeleton wrapper ... */ display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
 .skeleton-card { /* ... skeleton card ... */ background-color: var(--cor-fundo-card); border: 1px solid var(--cor-borda-sutil); border-radius: 8px; padding: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); overflow: hidden; }
 .skeleton-image, .skeleton-line, .skeleton-button { /* ... skeleton elements ... */ background: linear-gradient(90deg, var(--cor-skeleton-base) 25%, var(--cor-skeleton-shine) 50%, var(--cor-skeleton-base) 75%); background-size: 2000px 100%; animation: skeletonShimmer 1.5s infinite linear; border-radius: 4px; }
-.skeleton-image { height: 300px; margin: -20px -20px 15px -20px; border-radius: 0; } /* Imagem skeleton maior */
+.skeleton-image { height: 300px; margin: -20px -20px 15px -20px; border-radius: 0; }
 .skeleton-line { height: 1em; margin-bottom: 0.75em; } .skeleton-title { width: 60%; height: 1.2em; margin-top: 15px; margin-left: auto; margin-right: auto;} .skeleton-text { width: 90%; margin-left: auto; margin-right: auto;} .skeleton-text.short { width: 70%; } .skeleton-price { width: 30%; height: 1.4em; margin: 15px auto 20px auto; } .skeleton-button { width: 100%; height: 45px; margin-top: 10px; border-radius: 30px; }
 
 /* --- Estilos Vitrine e Cards --- */
@@ -177,7 +183,7 @@ footer.visible { transition-delay: 0.7s; }         /* Rodapé */
 .btn-adicionar:hover { background-color: var(--cor-dourado); color: var(--cor-fundo-escuro); transform: scale(1.03); }
 
 /* --- Estilos Botão Flutuante e Carrinho --- */
-/* ... (Estilos do botão flutuante e do carrinho permanecem os mesmos da etapa anterior) ... */
+/* ... (Estilos do botão flutuante e do carrinho permanecem os mesmos) ... */
 .botao-carrinho-flutuante { position: fixed; bottom: 30px; right: 30px; background-color: var(--cor-dourado); color: var(--cor-fundo-escuro); border: none; border-radius: 50%; width: 65px; height: 65px; font-size: 28px; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; z-index: 1000; transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.8s ease-in, visibility 0.8s ease-in; }
 .botao-carrinho-flutuante:hover { background-color: var(--cor-dourado-hover); transform: scale(1.1) rotate(5deg); }
 .botao-carrinho-flutuante #contador-carrinho { position: absolute; top: 0px; right: 0px; background-color: var(--cor-erro); color: white; border-radius: 50%; padding: 4px 8px; font-size: 0.8em; min-width: 22px; text-align: center; font-weight: bold; border: 2px solid var(--cor-fundo-escuro); line-height: 1; }

@@ -1,27 +1,45 @@
 [
     {
       "id": "promo01",
-      "tipo": "promocao", 
+      "tipo": "promocao",
       "titulo": "⚡ LIQUIDAÇÃO PROGRESSIVA! ⚡",
-      "texto": "Leve 2 peças com 15% OFF, 3 peças com 20% OFF! Só esta semana. Use o cupom PROGRESSIVO.",
+      "texto": "Leve 2 peças com 15% OFF, 3 com 20%! Só esta semana.",
+      "imagem": "imagens/banner1.jpg",
+      "link_instagram": null,
+      "ativo": true
+    },
+    {
+      "id": "promo02",
+      "tipo": "promocao",
+      "titulo": "NOVA COLEÇÃO 'URBAN GOLD'",
+      "texto": "Descubra peças que unem o urbano com a sofisticação do dourado.",
+      "imagem": "imagens/banner2.jpg",
+      "link_instagram": "https://www.instagram.com/p/Cyyyyyyy/",
+      "ativo": true
+    },
+    {
+      "id": "promo03",
+      "tipo": "promocao",
+      "titulo": "FRETE GRÁTIS ACIMA DE R$299",
+      "texto": "Aproveite para completar seu look e receba em casa sem custo de envio.",
       "imagem": "imagens/liquidacao.png",
-      "link_instagram": null, 
+      "link_instagram": null,
       "ativo": true
     },
     {
       "id": "anuncio01",
-      "tipo": "anuncio", 
-      "titulo": "✨ Lançamento Coleção Outono/Inverno ✨",
-      "texto": "Novidades incríveis acabaram de chegar! Peças exclusivas com design moderno e toque tecnológico.",
-      "imagem": "imagens/outonoinverno.png", 
-      "link_instagram": "https://www.instagram.com/p/Cxxxxxxxxx/",
+      "tipo": "anuncio",
+      "titulo": "✨ Bastidores da Nova Campanha ✨",
+      "texto": "Veja como foi a produção da nossa última coleção!",
+      "imagem": "imagens/outonoinverno.png",
+      "link_instagram": "https://www.instagram.com/p/Czzzzzzz/",
       "ativo": true
     },
      {
       "id": "anuncio02",
-      "tipo": "anuncio", 
-      "titulo": "Siga @TammysStore_ no Instagram!",
-      "texto": "Acompanhe nossas dicas de moda, bastidores e promoções exclusivas para seguidores.",
+      "tipo": "anuncio",
+      "titulo": "Siga @TammysStore no Instagram!",
+      "texto": "Dicas de moda, bastidores e promoções exclusivas.",
       "imagem": "imagens/insta.png",
       "link_instagram": "https://www.instagram.com/tammysstore_/",
       "ativo": true
