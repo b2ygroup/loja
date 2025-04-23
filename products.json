@@ -22,5 +22,14 @@
     "preco": 199.00,
     "imagem": "imagens/jaqueta.jpg",
     "categoria": "Jaquetas"
+  },
+
+  {
+    "id": "sku004",
+    "nome": "Bota Tratorada",
+    "descricao": "Confortavel e elegante.",
+    "preco": 199.00,
+    "imagem": "imagens/bota_tratorada.png",
+    "categoria": "Botas"
   }
 ]
