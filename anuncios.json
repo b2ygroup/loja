@@ -6,15 +6,15 @@
       "texto": "Leve 2 peças com 15% OFF, 3 com 20%! Só esta semana.",
       "imagem": "imagens/banner1.jpg",
       "link_instagram": null,
-      "ativo": true
+      "ativo": false
     },
     {
       "id": "promo02",
       "tipo": "promocao",
-      "titulo": "NOVA COLEÇÃO 'URBAN GOLD'",
-      "texto": "Descubra peças que unem o urbano com a sofisticação do dourado.",
-      "imagem": "imagens/banner2.jpg",
-      "link_instagram": "https://www.instagram.com/p/Cyyyyyyy/",
+      "titulo": "🍂✨ Nova Coleção Outono & Inverno chegou!",
+      "texto": "🛍️ Venha viver o frio com moda que aquece – exclusiva, feminina e irresistível.",
+      "imagem": "imagens/campanha_outono.png",
+      "link_instagram": "https://www.instagram.com/tammysstore_/p/DIcCTqGx8rE/",
       "ativo": true
     },
     {
@@ -22,7 +22,7 @@
       "tipo": "promocao",
       "titulo": "FRETE GRÁTIS ACIMA DE R$299",
       "texto": "Aproveite para completar seu look e receba em casa sem custo de envio.",
-      "imagem": "imagens/liquidacao.png",
+      "imagem": "imagens/banner_outono.png",
       "link_instagram": null,
       "ativo": true
     },
@@ -33,7 +33,7 @@
       "texto": "Veja como foi a produção da nossa última coleção!",
       "imagem": "imagens/outonoinverno.png",
       "link_instagram": "https://www.instagram.com/p/Czzzzzzz/",
-      "ativo": true
+      "ativo": false
     },
      {
       "id": "anuncio02",

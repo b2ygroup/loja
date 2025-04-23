@@ -5,7 +5,7 @@
     "descricao": "Confortável e sustentável, perfeita para o dia a dia.",
     "preco": 89.90,
     "imagem": "imagens/vestido.jpg",
-    "categoria": "Vestidos"
+    "categoria": "Sobretudo"
   },
   {
     "id": "sku002",
@@ -13,7 +13,7 @@
     "descricao": "Corte clássico que nunca sai de moda. Lavagem média.",
     "preco": 159.50,
     "imagem": "imagens/calca.jpg",
-    "categoria": "Calças"
+    "categoria": "Tricot"
   },
   {
     "id": "sku003",
@@ -31,5 +31,18 @@
     "preco": 199.00,
     "imagem": "imagens/bota_tratorada.png",
     "categoria": "Botas"
+  },
+
+  {
+    "id": "sku004",
+    "nome": "Bota Tratorada",
+    "descricao": "Confortavel e elegante.",
+    "preco": 199.00,
+    "imagem": "imagens/bota_tratorada.png",
+    "categoria": "Conjunto"
   }
+
+
+
+
 ]
