@@ -11,74 +11,79 @@
 </head>
 <body>
 
-    <section id="welcome-screen">
-        <div class="lines-background">
-            <div class="line-bg"></div> <div class="line-bg"></div> <div class="line-bg"></div> <div class="line-bg"></div> <div class="line-bg"></div>
-        </div>
-        <div class="welcome-content">
-            <img src="imagens/logo.png" alt="Logo Tammy's Store" class="welcome-logo">
-            <h1 id="welcome-title" class="ml12">Tammy's Store</h1>
-        </div>
-    </section>
-    <header style="display: none;">
-        <button id="mobile-menu-toggle" aria-label="Abrir Menu"> <i class="fas fa-bars"></i> </button>
-        <img src="imagens/logo.png" alt="Logo Tammy's Store" id="header-logo">
-        <div class="header-text"> <h1>Tammy's Store</h1> <p>Peças selecionadas com carinho para você!</p> </div>
-        <div class="header-spacer"></div>
-    </header>
-    <section id="promo-section" style="display: none;">
-        <div class="swiper promo-swiper">
-            <div class="swiper-wrapper"> </div>
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-        </div>
-    </section>
-    <div class="content-wrapper" style="display: none;">
+    <section id="welcome-screen"> <div class="lines-background"> <div class="line-bg"></div> <div class="line-bg"></div> <div class="line-bg"></div> <div class="line-bg"></div> <div class="line-bg"></div> </div> <div class="welcome-content"> <img src="imagens/logo.png" alt="Logo Tammy's Store" class="welcome-logo"> <h1 id="welcome-title" class="ml12">Tammy's Store</h1> </div> </section>
 
-        <aside id="side-menu">
-            <h3>Categorias</h3>
-            <ul>
-                <li><button class="category-button active-category" data-category="all">Todas</button></li>
-                <li><button class="category-button" data-category="Botas">Botas</button></li>
-                <li><button class="category-button" data-category="Calças">Calças</button></li>
-                <li><button class="category-button" data-category="Vestidos">Vestidos</button></li>
-                <li><button class="category-button" data-category="T-shirts">T-shirts</button></li>
-                </ul>
-        </aside>
-        <main>
-             <h2>Nossos Produtos</h2>
-             <div id="lista-produtos" class="vitrine">
-                <div class="skeleton-wrapper">
-                    <div class="skeleton-card"> <div class="skeleton-image"></div> <div class="skeleton-line skeleton-title"></div> <div class="skeleton-line skeleton-text"></div> <div class="skeleton-line skeleton-text short"></div> <div class="skeleton-line skeleton-price"></div> <div class="skeleton-button"></div> </div>
-                    <div class="skeleton-card"> <div class="skeleton-image"></div> <div class="skeleton-line skeleton-title"></div> <div class="skeleton-line skeleton-text"></div> <div class="skeleton-line skeleton-text short"></div> <div class="skeleton-line skeleton-price"></div> <div class="skeleton-button"></div> </div>
-                    <div class="skeleton-card"> <div class="skeleton-image"></div> <div class="skeleton-line skeleton-title"></div> <div class="skeleton-line skeleton-text"></div> <div class="skeleton-line skeleton-text short"></div> <div class="skeleton-line skeleton-price"></div> <div class="skeleton-button"></div> </div>
-                </div>
-                 </div>
-        </main>
-        </div> <section id="store-announcements" style="display: none;">
-        <h2>Fique por Dentro</h2>
-        </section>
-    <section id="carrinho" class="carrinho-area">
-         <h3>Meu Carrinho</h3>
-         <ul id="itens-carrinho">
-             <li id="carrinho-vazio-msg">Seu carrinho está vazio.</li>
-         </ul>
-         <div class="carrinho-footer">
-             <p>Total: R$ <span id="total-carrinho">0.00</span></p>
-             <button id="btn-finalizar-compra" disabled><i class="fab fa-whatsapp"></i> Finalizar Compra</button>
-             <button id="btn-fechar-carrinho">Fechar Carrinho</button>
-         </div>
-    </section>
-    <button id="btn-abrir-carrinho" class="botao-carrinho-flutuante" title="Abrir Carrinho" style="display: none;">
-        <i class="fas fa-shopping-bag"></i>
-        <span id="contador-carrinho">0</span>
-    </button>
-    <footer>
-        <p>&copy; 2025 Tammy's Store. Todos os direitos reservados.</p>
-    </footer>
+    <header style="display: none;"> <button id="mobile-menu-toggle" aria-label="Abrir Menu"> <i class="fas fa-bars"></i> </button> <img src="imagens/logo.png" alt="Logo Tammy's Store" id="header-logo"> <div class="header-text"> <h1>Tammy's Store</h1> <p>Peças selecionadas com carinho para você!</p> </div> <div class="header-spacer"></div> </header>
+
+    <section id="promo-section" style="display: none;"> <div class="swiper promo-swiper"> <div class="swiper-wrapper"></div> <div class="swiper-pagination"></div> <div class="swiper-button-prev"></div> <div class="swiper-button-next"></div> </div> </section>
+
+    <div class="content-wrapper" style="display: none;">
+        <aside id="side-menu"> <h3>Categorias</h3> <ul> <li><button class="category-button active-category" data-category="all">Todas</button></li> <li><button class="category-button" data-category="Botas">Botas</button></li> <li><button class="category-button" data-category="Calças">Calças</button></li> <li><button class="category-button" data-category="Vestidos">Vestidos</button></li> <li><button class="category-button" data-category="T-shirts">T-shirts</button></li> </ul> </aside>
+        <main> <h2>Nossos Produtos</h2> <div id="lista-produtos" class="vitrine"> <div class="skeleton-wrapper"> <div class="skeleton-card"> <div class="skeleton-image"></div> <div class="skeleton-line skeleton-title"></div> <div class="skeleton-line skeleton-text"></div> <div class="skeleton-line skeleton-text short"></div> <div class="skeleton-line skeleton-price"></div> <div class="skeleton-button"></div> </div> <div class="skeleton-card"> <div class="skeleton-image"></div> <div class="skeleton-line skeleton-title"></div> <div class="skeleton-line skeleton-text"></div> <div class="skeleton-line skeleton-text short"></div> <div class="skeleton-line skeleton-price"></div> <div class="skeleton-button"></div> </div> <div class="skeleton-card"> <div class="skeleton-image"></div> <div class="skeleton-line skeleton-title"></div> <div class="skeleton-line skeleton-text"></div> <div class="skeleton-line skeleton-text short"></div> <div class="skeleton-line skeleton-price"></div> <div class="skeleton-button"></div> </div> </div> </div> </main>
+    </div> <section id="store-announcements" style="display: none;"> <h2>Fique por Dentro</h2> </section>
+
+    <section id="carrinho" class="carrinho-area"> <h3>Meu Carrinho</h3> <ul id="itens-carrinho"> <li id="carrinho-vazio-msg">Seu carrinho está vazio.</li> </ul> <div class="carrinho-footer"> <p>Total: R$ <span id="total-carrinho">0.00</span></p> <button id="btn-finalizar-compra" disabled>Informar Entrega</button> <button id="btn-fechar-carrinho">Fechar Carrinho</button> </div> </section>
+
+    <button id="btn-abrir-carrinho" class="botao-carrinho-flutuante" title="Abrir Carrinho" style="display: none;"> <i class="fas fa-shopping-bag"></i> <span id="contador-carrinho">0</span> </button>
+
+    <footer> <p>&copy; 2025 Tammy's Store. Todos os direitos reservados.</p> </footer>
+
     <div id="menu-overlay"></div>
 
+    <div id="delivery-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" title="Fechar">&times;</span>
+            <h2>Endereço de Entrega</h2>
+            <p>Por favor, preencha seus dados para envio.</p>
+            <form id="delivery-form">
+                <div class="form-group">
+                    <label for="fullname">Nome Completo:</label>
+                    <input type="text" id="fullname" name="fullname" required>
+                </div>
+                 <div class="form-group"> <label for="phone">Telefone (com DDD):</label>
+                    <input type="tel" id="phone" name="phone" placeholder="11987654321">
+                 </div>
+                <div class="form-group">
+                    <label for="zipcode">CEP:</label>
+                    <input type="tel" id="zipcode" name="zipcode" required pattern="\d{5}-?\d{3}" placeholder="00000-000">
+                     </div>
+                 <div class="form-group form-row"> <div style="flex: 3;">
+                         <label for="street">Rua/Avenida:</label>
+                         <input type="text" id="street" name="street" required>
+                     </div>
+                     <div style="flex: 1;">
+                         <label for="number">Número:</label>
+                         <input type="text" id="number" name="number" required>
+                     </div>
+                 </div>
+                 <div class="form-group">
+                     <label for="complement">Complemento (Apto, Bloco, Casa):</label>
+                     <input type="text" id="complement" name="complement">
+                 </div>
+                <div class="form-group">
+                    <label for="neighborhood">Bairro:</label>
+                    <input type="text" id="neighborhood" name="neighborhood" required>
+                </div>
+                <div class="form-group form-row"> <div style="flex: 3;">
+                         <label for="city">Cidade:</label>
+                         <input type="text" id="city" name="city" required>
+                     </div>
+                     <div style="flex: 1;">
+                         <label for="state">Estado (UF):</label>
+                         <input type="text" id="state" name="state" required maxlength="2" placeholder="SP">
+                     </div>
+                 </div>
+                 <div class="form-group">
+                     <label for="reference">Ponto de Referência (Opcional):</label>
+                     <textarea id="reference" name="reference" rows="2"></textarea>
+                 </div>
+
+                <button type="submit" class="btn-confirm-delivery">
+                    <i class="fab fa-whatsapp"></i> Confirmar e Enviar Pedido
+                </button>
+            </form>
+        </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
 
