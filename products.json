@@ -23,7 +23,6 @@
     "imagem": "imagens/jaqueta.jpg",
     "categoria": "Jaquetas"
   },
-
   {
     "id": "sku004",
     "nome": "Bota Tratorada",
@@ -32,17 +31,12 @@
     "imagem": "imagens/bota_tratorada.png",
     "categoria": "Botas"
   },
-
   {
-    "id": "sku004",
-    "nome": "Bota Tratorada",
-    "descricao": "Confortavel e elegante.",
+    "id": "sku005",
+    "nome": "Conjunto",
+    "descricao": "Lindo.",
     "preco": 199.00,
-    "imagem": "imagens/bota_tratorada.png",
+    "imagem": "imagens/conjunto.png",
     "categoria": "Conjunto"
   }
-
-
-
-
 ]

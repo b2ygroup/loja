@@ -39,7 +39,7 @@
       "id": "anuncio02",
       "tipo": "anuncio",
       "titulo": "Siga @TammysStore no Instagram!",
-      "texto": "Dicas de moda, bastidores e promoções exclusivas.",
+      "texto": "Dicas de moda e promoções exclusivas.",
       "imagem": "imagens/insta.png",
       "link_instagram": "https://www.instagram.com/tammysstore_/",
       "ativo": true
