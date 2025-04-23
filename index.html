@@ -20,34 +20,10 @@
     <button id="btn-abrir-carrinho" class="botao-carrinho-flutuante" title="Abrir Carrinho" style="display: none;"> <i class="fas fa-shopping-bag"></i> <span id="contador-carrinho">0</span> </button>
     <footer> <p>&copy; 2025 Tammy's Store. Todos os direitos reservados.</p> </footer>
     <div id="menu-overlay"></div>
+    <div id="delivery-modal" class="modal"> <div class="modal-content"> <span class="close-modal" title="Fechar">&times;</span> <h2>Endereço de Entrega</h2> <p>Preencha os dados para envio do seu pedido.</p> <form id="delivery-form" novalidate> <div class="form-group"> <label for="fullname">Nome Completo:</label> <input type="text" id="fullname" name="fullname" required> </div> <div class="form-group"> <label for="phone">Telefone/WhatsApp (DDD+Número):</label> <input type="tel" id="phone" name="phone" placeholder="(11) 98765-4321" required> </div> <div class="form-group"> <label for="zipcode">CEP:</label> <input type="tel" id="zipcode" name="zipcode" required placeholder="00000-000"> </div> <div class="form-group form-row"> <div style="flex: 3;"> <label for="street">Rua/Avenida:</label> <input type="text" id="street" name="street" required> </div> <div style="flex: 1;"> <label for="number">Número:</label> <input type="text" id="number" name="number" required> </div> </div> <div class="form-group"> <label for="complement">Complemento (Opcional):</label> <input type="text" id="complement" name="complement"> </div> <div class="form-group"> <label for="neighborhood">Bairro:</label> <input type="text" id="neighborhood" name="neighborhood" required> </div> <div class="form-group form-row"> <div style="flex: 3;"> <label for="city">Cidade:</label> <input type="text" id="city" name="city" required> </div> <div style="flex: 1;"> <label for="state">Estado (UF):</label> <input type="text" id="state" name="state" required maxlength="2" placeholder="SP"> </div> </div> <div class="form-group"> <label for="reference">Ponto de Referência (Opcional):</label> <textarea id="reference" name="reference" rows="2"></textarea> </div> <small class="form-error-message" id="delivery-error-message"></small> <button type="submit" class="btn-confirm-delivery"> <i class="fab fa-whatsapp"></i> Confirmar e Enviar Pedido </button> </form> </div> </div>
 
-    <div id="delivery-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" title="Fechar">&times;</span>
-            <h2>Endereço de Entrega</h2>
-            <p>Preencha os dados para envio do seu pedido.</p>
-            <form id="delivery-form" novalidate>
-                <div class="form-group"> <label for="fullname">Nome Completo:</label> <input type="text" id="fullname" name="fullname" required> </div>
-                <div class="form-group"> <label for="phone">Telefone/WhatsApp (DDD+Número):</label> <input type="tel" id="phone" name="phone" placeholder="(11) 98765-4321" required> </div>
-                <div class="form-group"> <label for="zipcode">CEP:</label> <input type="tel" id="zipcode" name="zipcode" required placeholder="00000-000"> </div>
-                 <div class="form-group form-row">
-                     <div style="flex: 3;"> <label for="street">Rua/Avenida:</label> <input type="text" id="street" name="street" required> </div>
-                     <div style="flex: 1;"> <label for="number">Número:</label> <input type="text" id="number" name="number" required> </div>
-                 </div>
-                 <div class="form-group"> <label for="complement">Complemento (Opcional):</label> <input type="text" id="complement" name="complement"> </div>
-                <div class="form-group"> <label for="neighborhood">Bairro:</label> <input type="text" id="neighborhood" name="neighborhood" required> </div>
-                <div class="form-group form-row">
-                     <div style="flex: 3;"> <label for="city">Cidade:</label> <input type="text" id="city" name="city" required> </div>
-                     <div style="flex: 1;"> <label for="state">Estado (UF):</label> <input type="text" id="state" name="state" required maxlength="2" placeholder="SP"> </div>
-                 </div>
-                 <div class="form-group"> <label for="reference">Ponto de Referência (Opcional):</label> <textarea id="reference" name="reference" rows="2"></textarea> </div>
-                 <small class="form-error-message" id="delivery-error-message"></small>
-                 <button type="submit" class="btn-confirm-delivery"> <i class="fab fa-whatsapp"></i> Confirmar e Enviar Pedido </button>
-            </form>
-        </div>
-    </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-masker/1.2.0/vanilla-masker.min.js" integrity="sha512-RbMQw6xKGymv6bRMO4z5OxHBzzem7BPEzzWHN9VN9RigaMCgAS4AHAp8kUBK515TUeYKN1BruQ/3zMZdvQ17KQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-masker/1.2.0/vanilla-masker.min.js" integrity="sha512-RbMQw6xKGymv6bRMO4z5OxHBzzem7BPEQX7nTJC9G08A70gXdUka76Rvgey83MsSXrIEJddog0vxUKN6iTce2Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="script.js"></script>
 
 </body>
