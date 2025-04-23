@@ -6,36 +6,43 @@
     <title>Tammy's Store</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    </head>
+</head>
 <body>
 
     <section id="welcome-screen">
-        <div class="welcome-content"> <img src="imagens/logo.png" alt="Logo Tammy's Store" class="welcome-logo"> <h1 id="welcome-title" class="ml1"> <span class="text-wrapper"> <span class="line line1"></span> <span class="letters">Tammy's Store</span> <span class="line line2"></span> </span> </h1> </div>
+        <div class="animated-bg-element line-1"></div>
+        <div class="animated-bg-element line-2"></div>
+        <div class="animated-bg-element shape-1"></div>
+        <div class="welcome-content">
+            <img src="imagens/logo.png" alt="Logo Tammy's Store" class="welcome-logo">
+            <h1 id="welcome-title" class="ml2">Tammy's Store</h1> </div>
     </section>
-    <header style="display: none;"> <img src="imagens/logo.png" alt="Logo Tammy's Store" id="header-logo"> <div class="header-text"> <h1>Tammy's Store</h1> <p>Peças selecionadas com carinho para você!</p> </div> </header>
+    <header style="display: none;">
+        <button id="mobile-menu-toggle" aria-label="Abrir Menu">
+             <i class="fas fa-bars"></i> </button>
+        <img src="imagens/logo.png" alt="Logo Tammy's Store" id="header-logo">
+        <div class="header-text"> <h1>Tammy's Store</h1> <p>Peças selecionadas com carinho para você!</p> </div>
+        <div class="header-spacer"></div>
+    </header>
 
-    <section id="promo-section" style="display: none;">
-        <div class="swiper promo-swiper">
-            <div class="swiper-wrapper">
-                </div>
-            <div class="swiper-pagination"></div>
+    <section id="promo-section" style="display: none;"> <div class="swiper promo-swiper"> <div class="swiper-wrapper"></div> <div class="swiper-pagination"></div> <div class="swiper-button-prev"></div> <div class="swiper-button-next"></div> </div> </section>
 
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-        </div>
-    </section>
-    <main style="display: none;">
-         <h2>Nossos Produtos</h2>
-         <div id="lista-produtos" class="vitrine"> <div class="skeleton-wrapper"> <div class="skeleton-card"> <div class="skeleton-image"></div> <div class="skeleton-line skeleton-title"></div> <div class="skeleton-line skeleton-text"></div> <div class="skeleton-line skeleton-text short"></div> <div class="skeleton-line skeleton-price"></div> <div class="skeleton-button"></div> </div> <div class="skeleton-card"> <div class="skeleton-image"></div> <div class="skeleton-line skeleton-title"></div> <div class="skeleton-line skeleton-text"></div> <div class="skeleton-line skeleton-text short"></div> <div class="skeleton-line skeleton-price"></div> <div class="skeleton-button"></div> </div> <div class="skeleton-card"> <div class="skeleton-image"></div> <div class="skeleton-line skeleton-title"></div> <div class="skeleton-line skeleton-text"></div> <div class="skeleton-line skeleton-text short"></div> <div class="skeleton-line skeleton-price"></div> <div class="skeleton-button"></div> </div> </div> </div>
-    </main>
+    <div class="content-wrapper" style="display: none;">
+        <aside id="side-menu"> <h3>Categorias</h3> <ul> <li><button class="category-button active-category" data-category="all">Todas</button></li> <li><button class="category-button" data-category="Botas">Botas</button></li> <li><button class="category-button" data-category="Calças">Calças</button></li> <li><button class="category-button" data-category="Vestidos">Vestidos</button></li> <li><button class="category-button" data-category="T-shirts">T-shirts</button></li> </ul> </aside>
+        <main> <h2 >Nossos Produtos</h2> <div id="lista-produtos" class="vitrine"> <div class="skeleton-wrapper"> <div class="skeleton-card"> <div class="skeleton-image"></div> <div class="skeleton-line skeleton-title"></div> <div class="skeleton-line skeleton-text"></div> <div class="skeleton-line skeleton-text short"></div> <div class="skeleton-line skeleton-price"></div> <div class="skeleton-button"></div> </div> <div class="skeleton-card"> <div class="skeleton-image"></div> <div class="skeleton-line skeleton-title"></div> <div class="skeleton-line skeleton-text"></div> <div class="skeleton-line skeleton-text short"></div> <div class="skeleton-line skeleton-price"></div> <div class="skeleton-button"></div> </div> <div class="skeleton-card"> <div class="skeleton-image"></div> <div class="skeleton-line skeleton-title"></div> <div class="skeleton-line skeleton-text"></div> <div class="skeleton-line skeleton-text short"></div> <div class="skeleton-line skeleton-price"></div> <div class="skeleton-button"></div> </div> </div> </div> </main>
+    </div> <section id="store-announcements" style="display: none;"> <h2>Fique por Dentro</h2> </section>
 
-    <section id="store-announcements" style="display: none;"> <h2>Fique por Dentro</h2> </section>
-    <section id="carrinho" class="carrinho-area"> <h3>Meu Carrinho</h3> <ul id="itens-carrinho"> <li id="carrinho-vazio-msg">Seu carrinho está vazio.</li> </ul> <div class="carrinho-footer"> <p>Total: R$ <span id="total-carrinho">0.00</span></p> <button id="btn-finalizar-compra" disabled>Finalizar Compra (WhatsApp)</button> <button id="btn-fechar-carrinho">Fechar Carrinho</button> </div> </section>
+    <section id="carrinho" class="carrinho-area"> <h3>Meu Carrinho</h3> <ul id="itens-carrinho"> <li id="carrinho-vazio-msg">Seu carrinho está vazio.</li> </ul> <div class="carrinho-footer"> <p>Total: R$ <span id="total-carrinho">0.00</span></p> <button id="btn-finalizar-compra" disabled><i class="fab fa-whatsapp"></i> Finalizar Compra</button> <button id="btn-fechar-carrinho">Fechar Carrinho</button> </div> </section>
 
-    <button id="btn-abrir-carrinho" class="botao-carrinho-flutuante" title="Abrir Carrinho" style="display: none;"> 🛒 <span id="contador-carrinho">0</span> </button>
+    <button id="btn-abrir-carrinho" class="botao-carrinho-flutuante" title="Abrir Carrinho" style="display: none;">
+        <i class="fas fa-shopping-bag"></i> <span id="contador-carrinho">0</span>
+    </button>
 
     <footer> <p>&copy; 2025 Tammy's Store. Todos os direitos reservados.</p> </footer>
+
+    <div id="menu-overlay"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
